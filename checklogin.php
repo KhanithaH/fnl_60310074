@@ -1,11 +1,11 @@
 <?php 
 session_start();
         if(isset($_POST['username'])){
-                  include("condb.php");
+                  include("con_db.php");
                   $username = $_POST['username'];
                   $password = $_POST['password'];
 
-                  $sql="SELECT * FROM login 
+                  $sql="SELECT * FROM user 
                   WHERE  username='".$username."' 
                   AND  password='".$password."' ";
                   $result = mysqli_query($con,$sql);
@@ -13,7 +13,7 @@ session_start();
                   if(mysqli_num_rows($result)==1){
                       $row = mysqli_fetch_array($result);
 
-                      $_SESSION["ID"] = $row["ID"];
+                      $_SESSION["uid"] = $row["uid"];
                       $_SESSION["name"] = $row["name"];
                       $_SESSION["level"] = $row["level"];
 

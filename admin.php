@@ -1,7 +1,7 @@
 <?php session_start(); 
-include('condb.php');
+include('con_db.php');
 
-  $ID = $_SESSION['ID'];
+  $ID = $_SESSION['uid'];
   $name = $_SESSION['name'];
   $level = $_SESSION['level'];
  	if($level!='admin'){
@@ -11,6 +11,7 @@ include('condb.php');
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 	<title></title>
 </head>
 <body>
